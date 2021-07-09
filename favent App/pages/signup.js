@@ -10,13 +10,13 @@ import {
   ImageBackground,
 } from "react-native";
 
-const Login = ({ navigation }) => {
+const Signup = ({ navigation }) => {
   return (
     <View>
-      <Text>Login</Text>
-      <Button title="Signup" onPress={() => navigation.navigate("Signup")} />
+      <Text>Sign up</Text>
+      <Button title="Login" onPress={() => navigation.navigate("Login")} />
     </View>
   );
 };
 
-export default Login;
+export default Signup;
