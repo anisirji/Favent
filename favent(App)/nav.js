@@ -1,20 +1,21 @@
 import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer } from "react-navigation";
-import Login from "./pages/login";
-import Signup from "./pages/signup";
-import Varify from "./pages/ForgetPass/varify";
-import Validate from "./pages/ForgetPass/validate";
-import Reset from "./pages/ForgetPass/reset";
-import Home from "./pages/home";
+import Login from "./Pages/Login/login";
+import Signup from "./Pages/Login/signup";
+import Varify from "./Pages/Login/forgetPass1";
+import Validate from "./Pages/Login/forgetPass2";
+import Reset from "./Pages/Login/forgetPass3";
+import Home from "./Pages/Home/home";
 
 const pages = {
-  Login: {
+  Signin: {
     screen: Login,
     navigationOptions: {
       headerShown: false,
     },
   },
-  Signup: {
+
+  Sinup: {
     screen: Signup,
     navigationOptions: {
       headerShown: false,
@@ -26,14 +27,9 @@ const pages = {
   Validate: {
     screen: Validate,
   },
+
   Reset: {
     screen: Reset,
-  },
-  Home: {
-    screen: Home,
-    navigationOptions: {
-      headerShown: false,
-    },
   },
 };
 
