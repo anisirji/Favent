@@ -1,39 +1,49 @@
 import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer } from "react-navigation";
-import Login from "./Pages/Login/login";
-import Signup from "./Pages/Login/signup";
-import Varify from "./Pages/Login/forgetPass1";
-import Validate from "./Pages/Login/forgetPass2";
-import Reset from "./Pages/Login/forgetPass3";
 import Home from "./Pages/Home/home";
+import Login from "./Pages/Login/login";
 
-const pages = {
-  Signin: {
+const screens = {
+  Login: {
     screen: Login,
     navigationOptions: {
       headerShown: false,
     },
   },
-
-  Sinup: {
-    screen: Signup,
-    navigationOptions: {
-      headerShown: false,
-    },
-  },
-  Varify: {
-    screen: Varify,
-  },
-  Validate: {
-    screen: Validate,
-  },
-
-  Reset: {
-    screen: Reset,
+  Main: {
+    screen: Home,
   },
 };
 
-const Nav = createStackNavigator(pages);
-export default createAppContainer(Nav);
+const AuthStack = createStackNavigator(screens);
+export default createAppContainer(AuthStack);
 
-//Used for navigation
+// ------------------Other way to do the same thing ----------
+
+// const Authh = (createStackNavigator = () => {
+//   <Auth.Navigator>
+//     <Auth.Screen
+//       name="Homee"
+//       component={Signin}
+//       options={{
+//         gestureEnabled: false,
+//       }}
+//     />
+//     <Auth.Screen name="Homee" component={Signin} />
+//     <Auth.Screen name="Homee" component={Signin} />
+//     <Auth.Screen name="Homee" component={Signin} />
+//     <Auth.Screen name="Homee" component={Signin} />
+//     <Auth.Screen name="Homee" component={Signin} />
+//     <Auth.Screen name="Homee" component={Signin} />
+//     <Auth.Screen name="Homee" component={Signin} />
+//     <Auth.Screen name="Homee" component={Signin} />
+//     <Auth.Screen name="Homee" component={Signin} />
+//     <Auth.Screen name="Homee" component={Signin} />
+//     <Auth.Screen name="Homee" component={Signin} />
+//     <Auth.Screen name="Homee" component={Signin} />
+//     <Auth.Screen name="Homee" component={Signin} />
+//     <Auth.Screen name="Homee" component={Signin} />
+//     <Auth.Screen name="Homee" component={Signin} />
+//     <Auth.Screen name="Homee" component={Signin} />
+//   </Auth.Navigator>;
+// });
