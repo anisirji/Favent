@@ -1,3 +1,0 @@
-/* Properties
-bgcolor,color
-*/
