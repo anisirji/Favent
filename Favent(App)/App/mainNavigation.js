@@ -21,6 +21,6 @@ const HomeTabScreens = () => (
 
 export default () => (
   <NavigationContainer>
-    <HomeStackScreen />
+    <LoginStackScreen />
   </NavigationContainer>
 );
