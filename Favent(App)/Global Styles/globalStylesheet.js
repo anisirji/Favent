@@ -1,20 +1,25 @@
-import { blue } from "ansi-colors";
+import color from "../assets/color";
 import { StyleSheet } from "react-native";
 
 const globalstyles = StyleSheet.create({
-  body: {
-    flex: 1,
-    padding: 24,
-    backgroundColor: "#000000",
-  },
-  title: {
-    marginTop: 16,
-    padding: 12,
-    color: blue,
+  //Login And Signup Page bottom text
+  bottomMessageOut: {
+    fontFamily: "Roboto",
+    color: color.darkGray,
+    fontWeight: "bold",
+    fontStyle: "normal",
     fontSize: 20,
+  },
+  bottomMessageIn: {
+    fontFamily: "Roboto",
+    color: color.lightBlue,
+    fontWeight: "bold",
+    fontStyle: "normal",
+  },
+  errors: {
+    color: color.red,
+    fontSize: 12,
   },
 });
 
 export default globalstyles;
-
-//Dosen't seem working

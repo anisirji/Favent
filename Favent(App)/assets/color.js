@@ -3,6 +3,7 @@ const color = {
   darkBlue: "#0e477e",
   lightBlue: "#659bcf",
   cardBlue: "#2f567c",
+  facebookBlue: "#4167B2",
   gray: "#acacac",
   lightGray: "#eeeeee",
   darkGray: "#3c3c3c",

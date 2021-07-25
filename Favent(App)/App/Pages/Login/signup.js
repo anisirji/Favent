@@ -1,14 +1,15 @@
 import React from "react";
 import { Button, Text, View } from "react-native";
 
-const Signup = () => {
+const Signup = ({ navigation }) => {
   return (
     <View>
       <Text>Signup</Text>
-      <Button title="Signup" />
-      <Button title="Signin" />
-      <Button title="Signup with Google" />
-      <Button title="Signup with Facebook" />
+      <Button title="Signup" onPress={() => navigation.navigate("Details")} />
+      <Button
+        title="Back To Signin"
+        onPress={() => navigation.navigate("Login")}
+      />
     </View>
   );
 };
