@@ -24,7 +24,11 @@ const LoginStackScreen = () => (
     <LoginStack.Screen name="ForgetPass1" component={ForgetPass1} />
     <LoginStack.Screen name="ForgetPass2" component={ForgetPass2} />
     <LoginStack.Screen name="ForgetPass3" component={ForgetPass3} />
-    <LoginStack.Screen name="Signup" component={Signup} />
+    <LoginStack.Screen
+      name="Signup"
+      component={Signup}
+      options={{ headerShown: false }}
+    />
     <LoginStack.Screen name="Details" component={Details} />
     <LoginStack.Screen
       name="SkillAndIndustry"

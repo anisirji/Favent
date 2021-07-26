@@ -57,36 +57,24 @@ const Login = ({ navigation }) => {
               {/* Custom InputFields */}
               <Input
                 placeholder="Email"
-                focus={true}
                 onChangeText={formikProps.handleChange("username")}
                 value={formikProps.values.username}
               />
-              <View
-                style={{
-                  alignSelf: "flex-start",
-                  marginLeft: screenWidth * 0.08,
-                }}
-              >
+              <View style={globalstyles.errorContainer}>
                 <Text style={globalstyles.errors}>
-                  {formikProps.errors.username}
+                  {formikProps.touched.username && formikProps.errors.username}
                 </Text>
               </View>
               <View style={styles.margin} />
               <Input
-                focus={true}
                 placeholder="Password"
                 secure={true}
                 onChangeText={formikProps.handleChange("password")}
                 values={formikProps.password}
               />
-              <View
-                style={{
-                  alignSelf: "flex-start",
-                  marginLeft: screenWidth * 0.8,
-                }}
-              >
+              <View style={globalstyles.errorContainer}>
                 <Text style={globalstyles.errors}>
-                  {formikProps.errors.password}
+                  {formikProps.touched.password && formikProps.errors.password}
                 </Text>
               </View>
               {/* Forget Password Button */}
@@ -153,7 +141,6 @@ const Login = ({ navigation }) => {
                 />
               </View>
               <View style={styles.margin} />
-              <View style={styles.margin} />
 
               <Text style={globalstyles.bottomMessageOut}>
                 Don't have an account ?{" "}
@@ -183,14 +170,6 @@ const styles = StyleSheet.create({
     marginTop: 55,
   },
 
-  text: {
-    color: "white",
-    fontSize: 42,
-    lineHeight: 84,
-    fontWeight: "bold",
-    textAlign: "center",
-    backgroundColor: "#000000c0",
-  },
   bg: {
     position: "absolute",
     height: Dimensions.get("window").height,
