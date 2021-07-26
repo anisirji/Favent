@@ -141,14 +141,20 @@ const Signup = ({ navigation }) => {
                   bgColor={color.darkRed}
                   textColor={color.lightGray}
                   width={0.4}
-                  onPress={() => alert("Signed Up with Google")}
+                  onPress={() => {
+                    alert("Signed Up with Google");
+                    navigation.navigate("SkillAndIndustry");
+                  }}
                 />
                 <Btn
                   name="Facebook "
                   bgColor={color.facebookBlue}
                   textColor={color.lightGray}
                   width={0.42}
-                  onPress={() => alert("Signed Up with Facebook")}
+                  onPress={() => {
+                    alert("Signed Up with Facebook");
+                    navigation.navigate("SkillAndIndustry");
+                  }}
                 />
               </View>
               <View style={styles.margin} />
@@ -181,14 +187,6 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
 
-  text: {
-    color: "white",
-    fontSize: 42,
-    lineHeight: 84,
-    fontWeight: "bold",
-    textAlign: "center",
-    backgroundColor: "#000000c0",
-  },
   bg: {
     position: "absolute",
     height: Dimensions.get("window").height,
