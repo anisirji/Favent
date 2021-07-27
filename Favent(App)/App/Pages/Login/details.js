@@ -4,7 +4,6 @@ import {
   Dimensions,
   View,
   Image,
-  TouchableOpacity,
   TouchableWithoutFeedback,
   Keyboard,
   StyleSheet,
@@ -27,32 +26,24 @@ const screenHeight = Dimensions.get("window").height;
 const Details = ({ navigation }) => {
   //Validating Form
   const ReviewForm = yup.object().shape({
-    firstName: yup
-      .string()
-      .matches(/^[A-Za-z ]*$/, "Please enter valid name")
-      .max(40),
-    lastName: yup
-      .string()
-      .matches(/^[A-Za-z ]*$/, "Please enter valid name")
-      .max(40),
-    country: yup
-      .string()
-      .matches(/^[A-Za-z ]*$/, "Please enter valid name")
-      .max(40),
+    firstName: yup.string().min(2).max(40).required(),
+    lastName: yup.string().min(2).max(40).required(),
+    country: yup.string().min(2).max(40).required(),
   });
 
+  const [checkboxState, setCheckboxState] = React.useState(false);
+
   return (
-    //Formik kind of collects all data from the form
     <Formik
       initialValues={{ firstName: "", lastName: "", country: "" }}
       validationSchema={ReviewForm}
       onSubmit={(values) => {
-        //Jay & Yash you get "values" object onSubmit SEE IN CONSOLE
         console.log(values);
+        alert(`${values.firstName}, Welcome you are logged in`);
+        navigation.navigate("SkillAndIndustry");
       }}
     >
       {(formikProps) => (
-        //Dismissing Keyboard on click anywere on screen
         <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
           <View style={styles.main}>
             <Image
@@ -106,11 +97,40 @@ const Details = ({ navigation }) => {
                 </Text>
               </View>
 
-              {/* Other Buttons */}
               <View style={globalstyles.margin} />
-              {/*This is Simply for margin used in many palces so don't be confused :) ,
-              <Btn /> is not a react native default component*/}
+
+              <View
+                style={{
+                  marginHorizontal: screenWidth * 0.15,
+                  flexDirection: "row",
+                  justifyContent: "center",
+                }}
+              >
+                <BouncyCheckbox
+                  style={{ borderColor: color.lightBlue }}
+                  fillColor={color.lightBlue}
+                  isChecked={checkboxState}
+                  disableBuiltInState
+                  onPress={() => setCheckboxState(!checkboxState)}
+                />
+
+                <Text>
+                  These are some of the{" "}
+                  <Text style={{ color: color.blue }}>terms and condition</Text>
+                  {" & "}{" "}
+                  <Text style={{ color: color.blue, display: "none" }}>
+                    The Privicy Policies
+                  </Text>
+                  that a user might need to allow.
+                </Text>
+              </View>
+
+              <View style={globalstyles.margin} />
+              <View style={globalstyles.margin} />
+              <View style={globalstyles.margin} />
+
               <Btn
+                disabled={!checkboxState}
                 name="Continue"
                 bgColor={color.blue}
                 textColor={color.white}
@@ -144,3 +164,5 @@ const styles = StyleSheet.create({
 });
 
 export default Details;
+
+//Error is .. Form Not validating ... ?!!

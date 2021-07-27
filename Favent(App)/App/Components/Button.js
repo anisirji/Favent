@@ -7,11 +7,24 @@
 import React from "react";
 import { StyleSheet, Text, View, Dimensions, Image } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { useState } from "react/cjs/react.production.min";
 
 export default function Btn(props) {
   let screenWidth = Dimensions.get("window").width;
+  let opacity;
+  if (props.disabled) {
+    opacity = 0.6;
+    console.log(opacity);
+  } else {
+    opacity = 1;
+    console.log(opacity);
+  }
   return (
-    <TouchableOpacity activeOpacity={0.6} onPress={props.onPress}>
+    <TouchableOpacity
+      activeOpacity={0.6}
+      onPress={props.onPress}
+      disabled={props.disabled}
+    >
       <View
         style={{
           backgroundColor: props.bgColor,
@@ -23,6 +36,7 @@ export default function Btn(props) {
           flexDirection: "row",
           height: 50,
           borderRadius: 100,
+          opacity: opacity,
           // shadowColor: "black",
           // shadowOffset: { width: 0, height: 2 },
           // shadowOpacity: 0.4,
