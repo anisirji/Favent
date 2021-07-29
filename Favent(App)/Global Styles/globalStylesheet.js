@@ -18,7 +18,7 @@ const globalstyles = StyleSheet.create({
     color: color.lightBlue,
     fontWeight: "bold",
     fontStyle: "normal",
-  },
+  }, //Input Errors
   errorContainer: {
     alignSelf: "flex-start",
     marginLeft: screenWidth * 0.09,
@@ -26,7 +26,7 @@ const globalstyles = StyleSheet.create({
   errors: {
     color: color.blue,
     fontSize: 12,
-  },
+  }, //Pages Repetattivee Title and logos
   smallLogo: {
     marginTop: 30,
     marginLeft: 27,
@@ -37,7 +37,7 @@ const globalstyles = StyleSheet.create({
     fontWeight: "bold",
     color: color.darkGray,
     marginLeft: screenWidth * 0.05,
-    marginTop: 30,
+    marginTop: 10,
   },
   profileCreationDiscription: {
     fontFamily: "Roboto",
@@ -52,6 +52,64 @@ const globalstyles = StyleSheet.create({
   },
   margin: {
     margin: 10,
+  }, //Info Card Container
+  InfoCardContainer: {
+    backgroundColor: color.cardBlue,
+    padding: 10,
+    borderRadius: 15,
+    marginBottom: 20,
+  },
+  InfoCardTitle: {
+    fontSize: 17,
+    marginBottom: 10,
+    fontWeight: "400",
+    color: color.white,
+    fontFamily: "Roboto",
+    fontStyle: "normal",
+  },
+  InfoCardItem: {
+    flexDirection: "row",
+    marginBottom: 5,
+    alignItems: "center",
+  },
+  InfoCardItemsDes: {
+    marginLeft: 10,
+    color: color.lightGray,
+    fontFamily: "Roboto",
+    fontStyle: "normal",
+    fontSize: 13,
+    fontWeight: "300",
+  },
+  cardDel: {
+    position: "absolute",
+    right: 20,
+    bottom: 20,
+    color: color.lightGray,
+    fontFamily: "Roboto",
+    fontStyle: "normal",
+    fontSize: 13,
+    fontWeight: "300",
+  }, //Circle Btn
+  circleBtnShadow: {
+    height: 59,
+    width: 59,
+    borderRadius: 100,
+    backgroundColor: "#efefef",
+  },
+  circleBtn: {
+    backgroundColor: color.green,
+    height: 55,
+    width: 55,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 100,
+  },
+  circleBtnName: {
+    fontSize: 30,
+    fontWeight: "bold",
+    color: color.white,
+    fontFamily: "Roboto",
+    fontStyle: "normal",
   },
 });
 

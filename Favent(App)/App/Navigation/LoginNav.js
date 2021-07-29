@@ -3,8 +3,6 @@ import { createStackNavigator } from "@react-navigation/stack";
 import ForgetPass1 from "../Pages/Login/forgetPass1";
 import ForgetPass2 from "../Pages/Login/forgetPass2";
 import ForgetPass3 from "../Pages/Login/forgetPass3";
-import AddQualification from "../Pages//Login/addQualification";
-import AddworkExp from "../Pages//Login/addWorkexp";
 import Details from "../Pages/Login/details";
 import Login from "../Pages/Login/login";
 import Resume from "../Pages/Login/resume";
@@ -35,9 +33,7 @@ const LoginStackScreen = () => (
       component={SkillsAndIndustries}
     />
     <LoginStack.Screen name="Qualification" component={Qualification} />
-    <LoginStack.Screen name="AddQualification" component={AddQualification} />
     <LoginStack.Screen name="WorkExp" from component={WorkExp} />
-    <LoginStack.Screen name="AddworkExp" component={AddworkExp} />
     <LoginStack.Screen name="Resume" component={Resume} />
   </LoginStack.Navigator>
 );

@@ -4,6 +4,8 @@
     add more styles flexiblity, bgColor
  */
 
+//bgColor, textColor, width
+
 import React from "react";
 import { StyleSheet, Text, View, Dimensions, Image } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
@@ -14,10 +16,8 @@ export default function Btn(props) {
   let opacity;
   if (props.disabled) {
     opacity = 0.6;
-    console.log(opacity);
   } else {
     opacity = 1;
-    console.log(opacity);
   }
   return (
     <TouchableOpacity
