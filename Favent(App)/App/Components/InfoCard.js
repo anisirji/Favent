@@ -1,4 +1,4 @@
-import { Text, View, Image } from "react-native";
+import { Text, View, Image, TouchableHighlightComponent } from "react-native";
 import React from "react";
 import globalstyles from "../../Global Styles/globalStylesheet";
 
@@ -17,7 +17,10 @@ const InfoCard = (props) => {
           Completed in {props.date}{" "}
         </Text>
       </View>
-      <Text style={globalstyles.cardDel}>Detete</Text>
+
+      <Text onPress={props.onPress} style={globalstyles.cardDel}>
+        Detete
+      </Text>
     </View>
   );
 };

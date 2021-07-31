@@ -26,7 +26,7 @@ const globalstyles = StyleSheet.create({
   errors: {
     color: color.blue,
     fontSize: 12,
-  }, //Pages Repetattivee Title and logos
+  }, //Pages Repetattivee Title and logos, btn container
   smallLogo: {
     marginTop: 30,
     marginLeft: 27,
@@ -47,6 +47,12 @@ const globalstyles = StyleSheet.create({
     marginLeft: screenWidth * 0.05,
     marginTop: 3,
   },
+  bottomBtnContainer: {
+    position: "absolute",
+    bottom: 100,
+    flexDirection: "row",
+    marginHorizontal: screenWidth * 0.05,
+  },
   hidden: {
     display: "none",
   },
@@ -57,7 +63,7 @@ const globalstyles = StyleSheet.create({
     backgroundColor: color.cardBlue,
     padding: 10,
     borderRadius: 15,
-    marginBottom: 20,
+    marginBottom: 10,
   },
   InfoCardTitle: {
     fontSize: 17,

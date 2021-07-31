@@ -3,37 +3,56 @@ import {
   Text,
   View,
   Image,
-  ScrollView,
   StyleSheet,
   Dimensions,
   FlatList,
   SafeAreaView,
-  Button,
 } from "react-native";
 import globalstyles from "../../../Global Styles/globalStylesheet";
 import InfoCard from "../../Components/InfoCard";
 import color from "../../../assets/color";
-import RoundBtn from "../../Components/roundBtn";
 import { useState } from "react/cjs/react.development";
 import Btn from "../../Components/Button";
 import AddModal from "../../Components/addModal";
 
 const Qualification = ({ navigation }) => {
   const [modalOpen, setModalClose] = useState(false);
+  // const [btn, setBtn] = useState(true);
   const [cards, setCards] = useState([]);
 
+  // function checkBtn() {
+  //   if (cards.length > 0) {
+  //     setBtn(false);
+  //   } else setBtn(true);
+  // }
+
+  const { v4: uuidv4 } = require("uuid");
+
   const addCards = (cards) => {
-    cards.id = Math.random().toString();
+    cards.id = uuidv4();
     setCards((currentCards) => [cards, ...currentCards]);
   };
 
+  const delCards = (id) => {
+    // checkBtn();
+    setCards((prevCards) => {
+      return prevCards.filter((card) => card.id != id);
+    });
+    // setCards((clickedCard) => clickedCard.filter((cards) => cards.id != id));
+  };
+
   return (
-    <View>
+    <View
+      style={{
+        height: Dimensions.get("window").height,
+      }}
+    >
       <AddModal
         visible={modalOpen}
         animationType="fade"
         onPress={() => {
           setModalClose(false);
+          // checkBtn();
         }}
         addCards={addCards}
         title="Add Qualifications"
@@ -43,11 +62,11 @@ const Qualification = ({ navigation }) => {
         fourthInput="Compleation Year"
         fifthInput="Achivements"
       />
+
       <Image
         style={globalstyles.smallLogo}
         source={require("../../../assets/Images/logoSm.png")}
       />
-      <Text style={globalstyles.profileCreationTitles}>Qualification</Text>
 
       <Text style={globalstyles.profileCreationDiscription}>
         Enter Your Qualification, It will help us to find the best match for you
@@ -63,6 +82,7 @@ const Qualification = ({ navigation }) => {
               title={item.title}
               location={item.location}
               date={item.regineDate}
+              onPress={() => delCards(item.id)}
             />
           )}
         />
@@ -78,22 +98,34 @@ const Qualification = ({ navigation }) => {
         </View>
       </SafeAreaView>
       <View style={globalstyles.margin} />
-      <Btn
-        name="Continue"
-        bgColor={color.blue}
-        textColor={color.white}
-        width={0.5}
-        onPress={() => navigation.push("WorkExp")}
-      />
+      <View style={globalstyles.bottomBtnContainer}>
+        <Btn
+          // disabled={btn}
+          name="Continue"
+          bgColor={color.blue}
+          textColor={color.white}
+          width={0.45}
+          onPress={() => navigation.navigate("WorkExp")}
+        />
+        <Btn
+          name="Skip"
+          bgColor={color.lightGray}
+          textColor={color.blue}
+          width={0.45}
+          onPress={() => alert("This will take you to the home page")}
+        />
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   cardContainer: {
-    maxHeight: Dimensions.get("window").height * 0.65,
+    maxHeight: Dimensions.get("window").height * 0.6,
     marginHorizontal: Dimensions.get("window").width * 0.05,
   },
 });
 
 export default Qualification;
+
+//Btn Not Working
